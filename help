@@ -1,0 +1,62 @@
+
+ IMAGE PROCESSING
+    Program process pgm and ppm files.
+    And all other images via OpenCV library.
+
+ CALLING:
+    Program {[-i name] [-o name] [-m color] [-z number number] [-g number]
+             [-ry number] [-h] [-d] }
+
+ OPTIONS:
+
+    The order of options is unrestricted and is saved for further processing.
+    Oprations canbe repeated multiple times during one session.
+    To pgm and ppm files the comments are added. They contain the information
+    what was done and the date.
+
+    -i <file_name> - name of th file to be loaded (if given '-', the file will be
+     read from standard input; 
+     !! From the standard input means the picture not the path !!
+
+    -o <file_name> - name of the file to save ( if given '-', the file will be
+     printed to the standard output;
+
+    -d - after processing the image will be displayed. Works after completing all
+     the operations and saving;
+
+    -m <color> - choose color to be processed: r – red, g – green, b – blue,
+     s – conversion to grays;
+     may appear multiple times setting current color to be processed. The color
+     is applicable till new color is specified by -m <color>.
+     Only one color (or grays) can be processed at the time.
+     Option is omitted for monochromatic pictures and doesn't cause error, only
+     warning. If no color is specified all are processed;
+
+    -g <ratio> - gamma correction with given ratio. Takes values higher than 0;
+
+    -z <black> <white> - change of colors level (not only black and white).
+     Black and white parameters must be replaced by numbers between 0-100 and
+     white > black;
+
+    -ry - vertical blur. Takes non-negative values. Fractions are converted to
+     int;
+
+    -h - histogram stretch. For colored images - for specified color;
+
+    --help - displays help and closes program;
+
+ COMMENTS:
+    -Option -i must appear when launching the program. Its lack, and the lack
+     of file names after -i and -o cause error message.
+     Lack of -o option causes printing the image on th standard output;
+
+    -If mor files spcified after -o or -i, only the last one is valid;
+
+
+ MORE:
+    Detailed conclussions and comments available in file main.h
+
+ CREATED BY:
+    GeeksOnBoard 2013
+
+
